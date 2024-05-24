@@ -9,7 +9,7 @@ const App = () => {
       <Navbar />
       <Box
         sx={{
-          height: "calc(100vh - 300px)",
+          minHeight: "calc(100vh - 300px)",
         }}
       >
         <Outlet />

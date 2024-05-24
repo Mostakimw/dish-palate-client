@@ -1,7 +1,11 @@
-
+import Banner from "../../components/UI/Home/Banner/Banner";
 
 const Homepage = () => {
-  return <div>{/* <Navbar/> */}</div>;
+  return (
+    <div>
+      <Banner />
+    </div>
+  );
 };
 
 export default Homepage;

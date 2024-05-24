@@ -29,10 +29,10 @@ export const theme = createTheme({
   },
   typography: {
     body1: {
-      color: "#9E9E9E",
+      color: "#1F1F1F",
     },
     body2: {
       color: "#F5F5F5",
-    },
+    }, 
   },
 });

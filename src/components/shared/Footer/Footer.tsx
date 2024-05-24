@@ -8,6 +8,7 @@ const Footer = () => {
       style={{
         backgroundColor: "#666f73",
         padding: "50px 0",
+        marginTop: 70
       }}
     >
       <Container>
