@@ -31,5 +31,8 @@ export const theme = createTheme({
     body1: {
       color: "#9E9E9E",
     },
+    body2: {
+      color: "#F5F5F5",
+    },
   },
 });
