@@ -9,7 +9,11 @@ type TContainerProps = {
 
 const Container = ({ children, sx }: TContainerProps) => {
   return (
-    <Box sx={{ maxWidth: "1320px", margin: "0 auto", ...sx }}>{children}</Box>
+    <Box
+      sx={{ maxWidth: "1320px", margin: "0 auto", padding: "0 16px", ...sx }}
+    >
+      {children}
+    </Box>
   );
 };
 
