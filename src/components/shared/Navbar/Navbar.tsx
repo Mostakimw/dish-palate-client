@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Drawer,
   Hidden,
   IconButton,
@@ -11,34 +12,17 @@ import {
 import { NavLink } from "react-router-dom";
 import Container from "../../UI/Container/Container";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../lib/Provider/AuthProviders";
 
 interface THamburgerMenuProps {
   open: boolean;
   handleDrawerOpen: () => void;
 }
 
-const menuItems = (
-  <>
-    <Typography component={NavLink} to="/">
-      Home
-    </Typography>
-    <Typography component={NavLink} to="/recipes">
-      Recipes
-    </Typography>
-    <Typography component={NavLink} to="/add-recipes">
-      Add Recipes
-    </Typography>
-    <Typography component={NavLink} to="/coins">
-      Coins
-    </Typography>
-    <Typography component={NavLink} to="/login">
-      Login
-    </Typography>
-  </>
-);
-
 const Navbar = () => {
+  const { user, googleLogin } = useContext(AuthContext);
+  console.log(user?.displayName);
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDrawerOpen = () => {
@@ -48,6 +32,39 @@ const Navbar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleLogin = () => {
+    console.log("clicked");
+    googleLogin().then((result) => {
+      console.log(result.user.displayName);
+    });
+  };
+
+  const menuItems = (
+    <>
+      <Typography component={NavLink} to="/">
+        Home
+      </Typography>
+      <Typography component={NavLink} to="/recipes">
+        Recipes
+      </Typography>
+      <Typography component={NavLink} to="/add-recipes">
+        Add Recipes
+      </Typography>
+      <Typography component={NavLink} to="/coins">
+        Coins
+      </Typography>
+      <Box>
+        {user?.displayName ? (
+          <Typography component={Button}>Logout</Typography>
+        ) : (
+          <Typography component={Button} onClick={handleLogin}>
+            Login
+          </Typography>
+        )}
+      </Box>
+    </>
+  );
 
   return (
     <Container>
@@ -68,6 +85,7 @@ const Navbar = () => {
         <Stack
           direction="row"
           justifyContent="space-between"
+          alignItems="center"
           gap={4}
           sx={{
             "& a": {
@@ -104,6 +122,7 @@ const Navbar = () => {
             <ListItem sx={{ width: 300 }}>
               <Stack
                 direction="column"
+                justifyContent="center"
                 gap={2}
                 sx={{
                   "& a": {
