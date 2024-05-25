@@ -14,8 +14,9 @@ import Container from "../../UI/Container/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../lib/Provider/AuthProviders";
-import { useLoginUserMutation } from "../../../redux/api/allApi";
-import { User } from "firebase/auth";
+import {
+  useCreateUserMutation,
+} from "../../../redux/api/allApi";
 
 interface THamburgerMenuProps {
   open: boolean;
@@ -23,10 +24,11 @@ interface THamburgerMenuProps {
 }
 
 const Navbar = () => {
-  const { googleLogin } = useContext(AuthContext);
-  const [user, setUser] = useState<User | null>(null);
-  console.log(user?.displayName);
-  const [createUser] = useLoginUserMutation(undefined);
+  // const userInfo = getUserInfo();
+  const { user, googleLogin, logoutUser } = useContext(AuthContext);
+  // const [user, setUser] = useState<User | null>(null);
+  const [createUser] = useCreateUserMutation(undefined);
+  // const [loginUser] = useLoginUserMutation(undefined);
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDrawerOpen = () => {
@@ -38,19 +40,27 @@ const Navbar = () => {
   };
 
   const handleLogin = async () => {
-    console.log("clicked");
     googleLogin().then(async (result) => {
-      setUser(result.user);
-      console.log(result.user.displayName);
+      console.log("login success");
       const userInfo = {
         displayName: result.user.displayName,
         photoUrl: result.user.photoURL,
         email: result.user.email,
         coin: 50,
       };
-      const res = await createUser(userInfo);
-      console.log(res);
+      try {
+        const res = await createUser(userInfo);
+        console.log(res);
+      } catch (err: any) {
+        console.error(err.message);
+      }
     });
+  };
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {})
+      .catch(() => {});
   };
 
   const menuItems = (
@@ -69,7 +79,9 @@ const Navbar = () => {
       </Typography>
       <Box>
         {user?.displayName ? (
-          <Typography component={Button}>Logout</Typography>
+          <Typography component={Button} onClick={handleLogout}>
+            Logout
+          </Typography>
         ) : (
           <Typography component={Button} onClick={handleLogin}>
             Login

@@ -2,7 +2,7 @@ import { baseApi } from "./baseApi";
 
 const allApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    loginUser: builder.mutation({
+    createUser: builder.mutation({
       query: (data) => {
         console.log(data);
         return {
@@ -12,7 +12,17 @@ const allApi = baseApi.injectEndpoints({
         };
       },
     }),
+    loginUser: builder.mutation({
+      query: (data) => {
+        console.log(data);
+        return {
+          url: "/login",
+          method: "POST",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
-export const { useLoginUserMutation } = allApi;
+export const { useLoginUserMutation, useCreateUserMutation } = allApi;
