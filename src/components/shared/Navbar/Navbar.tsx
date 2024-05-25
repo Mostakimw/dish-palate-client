@@ -14,6 +14,8 @@ import Container from "../../UI/Container/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../lib/Provider/AuthProviders";
+import { useLoginUserMutation } from "../../../redux/api/allApi";
+import { User } from "firebase/auth";
 
 interface THamburgerMenuProps {
   open: boolean;
@@ -21,8 +23,10 @@ interface THamburgerMenuProps {
 }
 
 const Navbar = () => {
-  const { user, googleLogin } = useContext(AuthContext);
+  const { googleLogin } = useContext(AuthContext);
+  const [user, setUser] = useState<User | null>(null);
   console.log(user?.displayName);
+  const [createUser] = useLoginUserMutation(undefined);
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDrawerOpen = () => {
@@ -33,10 +37,19 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log("clicked");
-    googleLogin().then((result) => {
+    googleLogin().then(async (result) => {
+      setUser(result.user);
       console.log(result.user.displayName);
+      const userInfo = {
+        displayName: result.user.displayName,
+        photoUrl: result.user.photoURL,
+        email: result.user.email,
+        coin: 50,
+      };
+      const res = await createUser(userInfo);
+      console.log(res);
     });
   };
 
