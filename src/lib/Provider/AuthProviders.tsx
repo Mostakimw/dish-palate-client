@@ -14,8 +14,15 @@ import {
   useLoginUserMutation,
 } from "../../redux/api/allApi";
 
+export type TUser = {
+  displayName: string;
+  photoUrl: string;
+  email: string;
+  coin: number;
+};
+
 type TAuthInfo = {
-  user: User | null;
+  user: User | TUser | null;
   googleLogin: () => Promise<UserCredential>;
   loading: boolean;
   logoutUser: () => Promise<void>;

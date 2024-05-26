@@ -32,7 +32,30 @@ const allApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getAllRecipe: builder.query({
+      query: () => {
+        return {
+          url: "/recipes",
+          method: "GET",
+        };
+      },
+    }),
+    updateAfterBuy: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/recipe",
+          method: "PATCH",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
-export const { useLoginUserMutation, useCreateUserMutation, useCreateRecipeMutation } = allApi;
+export const {
+  useLoginUserMutation,
+  useCreateUserMutation,
+  useCreateRecipeMutation,
+  useGetAllRecipeQuery,
+  useUpdateAfterBuyMutation,
+} = allApi;
