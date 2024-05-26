@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import Container from "../../components/UI/Container/Container";
 import { useGetAllRecipeQuery } from "../../redux/api/allApi";
 import RecipeCard from "./RecipeCard";
+import Loading from "../../components/shared/Loading/Loading";
 
 export type TRecipe = {
   _id: string;
@@ -21,10 +22,10 @@ const Recipes = () => {
   const { data: recipes, isLoading } = useGetAllRecipeQuery(undefined);
   console.log(recipes);
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   return (
-    <Container sx={{marginTop: 8}}>
+    <Container sx={{ marginTop: 8 }}>
       <Grid container spacing={3}>
         {recipes.data.map((recipe: TRecipe) => (
           <Grid item xs={12} sm={6} md={4} key={recipe._id}>
