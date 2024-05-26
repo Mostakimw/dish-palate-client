@@ -24,13 +24,14 @@ const Banner = () => {
       >
         <Box>
           <Typography maxWidth={{ xs: "100%", md: 600 }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            quod similique soluta quam nesciunt tempore temporibus atque id
-            quibusdam dignissimos autem alias molestias deleniti, repudiandae
-            modi repellat, nam aperiam neque nulla, rem esse numquam. Ipsam
-            natus non eos blanditiis eius, veritatis eum porro minus omnis
-            laudantium quibusdam ut debitis tenetur? Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Quia, enim.
+            Welcome to Dish Palate! Dive into a world of flavors with our
+            diverse collection of recipes crafted by passionate cooks from
+            around the globe. Whether you're a novice in the kitchen or a
+            seasoned chef, Dish Palate is your gateway to delicious creations
+            and culinary inspiration. Explore mouth-watering recipes or share
+            your own culinary masterpieces. Get started now and unlock the
+            secrets to gourmet cooking. Ready to cook up a storm? See our
+            recipes or add your own today!
           </Typography>
           <Stack direction={{ xs: "column", sm: "row" }} gap={3} marginTop={7}>
             <Button>Explore Recipes</Button>

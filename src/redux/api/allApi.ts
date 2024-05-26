@@ -73,6 +73,16 @@ const allApi = baseApi.injectEndpoints({
         };
       },
     }),
+    addReaction: builder.mutation({
+      query: (data) => {
+        console.log(data);
+        return {
+          url: `/recipes/reaction`,
+          method: "PATCH",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
@@ -85,4 +95,5 @@ export const {
   usePurchaseCoinMutation,
   useGetSingleRecipeQuery,
   useGetCategoryRecipeQuery,
+  useAddReactionMutation,
 } = allApi;
