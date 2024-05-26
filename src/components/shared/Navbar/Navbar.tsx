@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Drawer,
@@ -69,12 +70,17 @@ const Navbar = () => {
       <Typography component={NavLink} to="/recipes">
         Recipes
       </Typography>
-      <Typography component={NavLink} to="/add-recipe">
-        Add Recipe
-      </Typography>
-      <Typography component={NavLink} to="/coins">
-        Coins
-      </Typography>
+      {user && (
+        <>
+          <Typography component={NavLink} to="/add-recipe">
+            Add Recipe
+          </Typography>
+          <Typography component={NavLink} to="/coins">
+            Coins
+          </Typography>
+          <Avatar alt="Profile Image" src={user?.photoURL || ""} />
+        </>
+      )}
       <Box>
         {user?.displayName ? (
           <Typography component={Button} onClick={handleLogout}>
