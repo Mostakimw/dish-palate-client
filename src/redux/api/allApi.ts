@@ -22,7 +22,17 @@ const allApi = baseApi.injectEndpoints({
         };
       },
     }),
+    createRecipe: builder.mutation({
+      query: (data) => {
+        console.log(data);
+        return {
+          url: "/recipe",
+          method: "POST",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
-export const { useLoginUserMutation, useCreateUserMutation } = allApi;
+export const { useLoginUserMutation, useCreateUserMutation, useCreateRecipeMutation } = allApi;

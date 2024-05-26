@@ -18,12 +18,14 @@ type TAuthInfo = {
   user: User | null;
   googleLogin: () => Promise<UserCredential>;
   loading: boolean;
+  logoutUser: () => Promise<void>;
 };
 
 const defaultAuthInfo: TAuthInfo = {
   user: null,
   googleLogin: () => Promise.reject(),
   loading: true,
+  logoutUser: () => Promise.resolve(),
 };
 
 export const AuthContext = createContext<TAuthInfo>(defaultAuthInfo);

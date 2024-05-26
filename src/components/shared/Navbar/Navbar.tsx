@@ -14,9 +14,7 @@ import Container from "../../UI/Container/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../lib/Provider/AuthProviders";
-import {
-  useCreateUserMutation,
-} from "../../../redux/api/allApi";
+import { useCreateUserMutation } from "../../../redux/api/allApi";
 
 interface THamburgerMenuProps {
   open: boolean;
@@ -71,8 +69,8 @@ const Navbar = () => {
       <Typography component={NavLink} to="/recipes">
         Recipes
       </Typography>
-      <Typography component={NavLink} to="/add-recipes">
-        Add Recipes
+      <Typography component={NavLink} to="/add-recipe">
+        Add Recipe
       </Typography>
       <Typography component={NavLink} to="/coins">
         Coins
