@@ -13,7 +13,7 @@ const SuggestedRecipe = ({ recipe }: { recipe: TRecipe }) => {
       <Typography variant="h4" gutterBottom>
         Suggested Recipes
       </Typography>
-      <Box display="flex" overflowX="auto">
+      <Box display="flex">
         {categories.map((recipe: TRecipe) => (
           <Card key={recipe._id} style={{ minWidth: 200, marginRight: 16 }}>
             <CardMedia

@@ -4,7 +4,6 @@ const allApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createUser: builder.mutation({
       query: (data) => {
-        console.log(data);
         return {
           url: "/user",
           method: "POST",
@@ -23,7 +22,6 @@ const allApi = baseApi.injectEndpoints({
     }),
     createRecipe: builder.mutation({
       query: (data) => {
-        console.log(data);
         return {
           url: "/recipe",
           method: "POST",
@@ -75,7 +73,6 @@ const allApi = baseApi.injectEndpoints({
     }),
     addReaction: builder.mutation({
       query: (data) => {
-        console.log(data);
         return {
           url: `/recipes/reaction`,
           method: "PATCH",

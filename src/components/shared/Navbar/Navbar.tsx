@@ -16,6 +16,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../lib/Provider/AuthProviders";
 import { useCreateUserMutation } from "../../../redux/api/allApi";
+import { toast } from "sonner";
 
 interface THamburgerMenuProps {
   open: boolean;
@@ -38,7 +39,6 @@ const Navbar = () => {
   // handle login
   const handleLogin = async () => {
     googleLogin().then(async (result) => {
-      console.log("login success");
       const userInfo = {
         displayName: result.user.displayName,
         photoUrl: result.user.photoURL,
@@ -46,8 +46,10 @@ const Navbar = () => {
         coin: 50,
       };
       try {
-        const res = await createUser(userInfo);
-        console.log(res);
+        const res = await createUser(userInfo).unwrap();
+        if (res.success) {
+          toast.success("User Logged In Success");
+        }
       } catch (err: any) {
         console.error(err.message);
       }

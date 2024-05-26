@@ -1,0 +1,110 @@
+[{
+    "recipeName": "Kacchi Biryani",
+    "recipeImage": "https://miro.medium.com/v2/resize:fit:1100/1*9_0P2HpaeSfxXUQ3uw8kbA.jpeg",
+    "recipeDetails": "Kacchi Biryani is a traditional South Asian dish where marinated raw meat, typically mutton or chicken, is layered with partially cooked rice and slow-cooked in a sealed pot. The layers of meat and rice are infused with aromatic spices, saffron, and fried onions, resulting in a flavorful and fragrant rice dish.",
+    "embeddedCode": "bdubQONP9BQ?si=yZMfnLHNRAqTfLQt",
+    "category": "Chicken",
+    "watchCount": 200,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Bangladesh",
+    "reaction": []
+  },
+  {
+    "recipeName": "Spaghetti Carbonara",
+    "recipeImage": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-square640-v2.jpg",
+    "recipeDetails": "A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper. It's creamy, indulgent, and bursting with flavor. Perfect for a cozy night in!",
+    "embeddedCode": "3AAdKl1UYZs?si=S4znq2MuSlyjZUGg",
+    "category": "Convenience ",
+    "watchCount": 100,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Italy",
+    "reaction": []
+  },
+  {
+    "recipeName": "Butter Chicken",
+    "recipeImage": "https://feelgoodfoodie.net/wp-content/uploads/2024/02/Easy-Butter-Chicken-TIMG.jpg",
+    "recipeDetails": "A popular Indian curry dish made with tender chicken cooked in a rich and creamy tomato-based sauce. It's flavorful, aromatic, and pairs perfectly with naan or rice.",
+    "embeddedCode": "M-j7G7Ebb2A?si=tj4lwc0HsCvYyAp2",
+    "category": "Chicken ",
+    "watchCount": 100,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "India",
+    "reaction": []
+  },
+  {
+    "recipeName": "Sushi Rolls",
+    "recipeImage": "https://www.heinens.com/content/uploads/2023/06/Tuna-Sushi-Rolls-800x550-1.jpg",
+    "recipeDetails": "Delicious Japanese sushi rolls filled with fresh fish, avocado, and rice. They're light, refreshing, and make a perfect appetizer or meal.",
+    "embeddedCode": "dR3QMxReUOQ?si=ZRQt5B_dD8HLefOz",
+    "category": "Asian Fusion",
+    "watchCount": 100,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Japan",
+    "reaction": []
+  },
+  {
+    "recipeName": "Chocolate Chip Cookies",
+    "recipeImage": "https://joyfoodsunshine.com/wp-content/uploads/2016/01/best-chocolate-chip-cookies-recipe-ever-no-chilling-1.jpg",
+    "recipeDetails": "Classic homemade cookies filled with chocolate chips. They're soft, chewy, and irresistible!",
+    "embeddedCode": "loqCY9b7aec?si=G6sOdqGbvXjprLMD",
+    "category": "Desserts",
+    "watchCount": 150,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "United States",
+    "reaction": []
+  },
+  {
+    "recipeName": "Mushroom Risotto",
+    "recipeImage": "https://hips.hearstapps.com/hmg-prod/images/pad-thai-index-6477629462a38.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*",
+    "recipeDetails": "Creamy Italian rice dish cooked with mushrooms, onions, and Parmesan cheese. It's rich, flavorful, and perfect for a comforting meal.",
+    "embeddedCode": "b7YnoRFuZ9o?si=sIkzZJI7PfGSq9ax",
+    "category": "Vegetarian",
+    "watchCount": 120,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Italy",
+    "reaction": []
+  },
+  {
+    "recipeName": "Tofu Stir-Fry",
+    "recipeImage": "https://theplantbasedschool.com/wp-content/uploads/2022/11/Tofu-stir-fry-2-1.jpg",
+    "recipeDetails": "A healthy and flavorful stir-fry dish made with tofu, mixed vegetables, and a savory sauce. It's quick, easy, and perfect for a weeknight dinner.",
+    "embeddedCode": "b7YnoRFuZ9o?si=QPszLsaN79m5HkJV",
+    "category": "Vegetarian",
+    "watchCount": 130,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Bangladesh",
+    "reaction": []
+  },
+  {
+    "recipeName": "Grilled Lemon Herb Chicken",
+    "recipeImage": "https://thewholecook.com/wp-content/uploads/2020/05/Lemon-Herb-Grilled-Chicken-by-The-Whole-Cook-Horizontal.jpg",
+    "recipeDetails": "Juicy chicken breasts marinated in lemon, garlic, and herbs, then grilled to perfection. It's simple, flavorful, and great for summer BBQs.",
+    "embeddedCode": "ngRyBLEbW7E?si=rHltNJTlsfGZPVxD",
+    "category": "Chicken",
+    "watchCount": 160,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "United States",
+    "reaction": []
+  },
+  {
+    "recipeName": "Mango Sticky Rice",
+    "recipeImage": "https://www.chenabgourmet.com/wp-content/uploads/2024/02/sticky-rice-with-mango-recipe.jpg",
+    "recipeDetails": "A traditional Thai dessert made with sweet sticky rice, fresh mango slices, and coconut milk. It's sweet, creamy, and absolutely delicious.",
+    "embeddedCode": "M7_WdFhI7Hk?si=kj2d7lu_-Q9i3Ajm",
+    "category": "Desserts",
+    "watchCount": 140,
+    "purchased_by": [],
+    "creatorEmail": "chef@example.com",
+    "country": "Japan",
+    "reaction": []
+  }
+  
+]

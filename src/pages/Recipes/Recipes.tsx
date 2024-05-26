@@ -26,8 +26,15 @@ export type TRecipe = {
   reaction: any[];
 };
 
-const categories = ["Breakfast", "Lunch", "Dinner", "Snacks"];
-const countries = ["f", "Italy", "France", "India"];
+const categories = [
+  "Chicken",
+  "Convenience ",
+  "Asian Fusion",
+  "Desserts",
+  "Vegetarian",
+];
+
+const countries = ["Bangladesh", "Italy", "India", "Japan", "United States"];
 
 const Recipes = () => {
   const [category, setCategory] = useState<string>("");

@@ -58,7 +58,7 @@ const AuthProviders = ({ children }: { children: React.ReactNode }) => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser?.email) {
-        fetch(`http://localhost:5000/api/v1/jwt`, {
+        fetch(`https://dish-palate-server.vercel.app/api/v1/jwt`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -67,7 +67,6 @@ const AuthProviders = ({ children }: { children: React.ReactNode }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("token", data.token);
           });
       } else {

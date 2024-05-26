@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import Container from "../../Container/Container";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -34,8 +35,10 @@ const Banner = () => {
             recipes or add your own today!
           </Typography>
           <Stack direction={{ xs: "column", sm: "row" }} gap={3} marginTop={7}>
-            <Button>Explore Recipes</Button>
-            <Button variant="outlined">Recipes</Button>
+            <Button component={Link} to="/recipes">
+              Explore Recipes
+            </Button>
+            <Button variant="outlined">Add Recipe</Button>
           </Stack>
         </Box>
         <Box pr={{ xs: 0, md: 6 }} mt={{ xs: 4, md: 0 }}>

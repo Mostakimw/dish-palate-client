@@ -1,6 +1,6 @@
 # Dish Palate Website
 
-**Live Site**: [dish-palate](dish-palate)
+**Live Site**: [https://dish-palate.vercel.app/](https://dish-palate.vercel.app/)
 
 Welcome to Dish Palate! This repository contains the source code for our website built with TypeScript, React js, Material-UI, and Redux Toolkit.
 

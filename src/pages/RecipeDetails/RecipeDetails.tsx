@@ -13,17 +13,16 @@ import {
 import { useParams } from "react-router-dom";
 import Loading from "../../components/shared/Loading/Loading";
 import Container from "../../components/UI/Container/Container";
-import SuggestedRecipe from "./SuggestedRecipe";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../lib/Provider/AuthProviders";
-import { ThumbUp, ThumbUpOutlined } from "@mui/icons-material";
-import { toast } from "sonner";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const RecipeDetails = () => {
   const params = useParams();
   const { user } = useContext(AuthContext);
   const [hasReacted, setHasReacted] = useState(false);
-  console.log(hasReacted);
+  
   const {
     data: recipeData,
     isLoading,
@@ -44,7 +43,6 @@ const RecipeDetails = () => {
     };
     try {
       const res = await addReaction(updateInfo).unwrap();
-      console.log(res);
       if (res.success) {
         setHasReacted(!hasReacted);
       }
@@ -111,9 +109,9 @@ const RecipeDetails = () => {
                   </Typography>
                   <IconButton onClick={handleReaction}>
                     {hasReacted ? (
-                      <ThumbUp color="primary" />
+                      <FavoriteIcon color="primary" />
                     ) : (
-                      <ThumbUpOutlined />
+                      <FavoriteBorderIcon />
                     )}
                   </IconButton>
                 </CardContent>
@@ -124,7 +122,7 @@ const RecipeDetails = () => {
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/l8StcslKN04?si=RL0WVTVZRWsMhGoy"
+                  src={`https://www.youtube.com/embed/${recipe.embeddedCode}`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"

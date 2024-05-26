@@ -9,7 +9,7 @@ const Profile = () => {
         <Grid item xs={12} md={6}>
           <Box
             component="img"
-            src="https://via.placeholder.com/600" // Replace with your image URL
+            src="https://i.ibb.co/zGTst9p/hero-image.png"
             alt="Profile Image"
             sx={{
               width: "100%",

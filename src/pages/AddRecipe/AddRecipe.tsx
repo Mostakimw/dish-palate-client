@@ -88,8 +88,6 @@ const AddRecipe = () => {
         reaction: [],
       };
 
-      console.log(recipeData);
-
       // create recipe data here
       const res = await createRecipe(recipeData).unwrap();
       if (res?.success) {
@@ -97,8 +95,6 @@ const AddRecipe = () => {
       } else {
         toast.error(res?.error?.message);
       }
-      console.log(res);
-      console.log(recipeData);
     } catch (error) {
       console.error("Error uploading image:", error);
     }
