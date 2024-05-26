@@ -14,7 +14,6 @@ const allApi = baseApi.injectEndpoints({
     }),
     loginUser: builder.mutation({
       query: (data) => {
-        console.log(data);
         return {
           url: "/login",
           method: "POST",
@@ -33,9 +32,25 @@ const allApi = baseApi.injectEndpoints({
       },
     }),
     getAllRecipe: builder.query({
-      query: () => {
+      query: (args) => {
         return {
-          url: "/recipes",
+          url: `/recipes?category=${args.category}&country=${args.country}&search=${args.search}`,
+          method: "GET",
+        };
+      },
+    }),
+    getCategoryRecipe: builder.query({
+      query: (params) => {
+        return {
+          url: `/recipes?category=${params.category}`,
+          method: "GET",
+        };
+      },
+    }),
+    getSingleRecipe: builder.query({
+      query: (params) => {
+        return {
+          url: `/recipes/${params.id}`,
           method: "GET",
         };
       },
@@ -68,4 +83,6 @@ export const {
   useGetAllRecipeQuery,
   useUpdateAfterBuyMutation,
   usePurchaseCoinMutation,
+  useGetSingleRecipeQuery,
+  useGetCategoryRecipeQuery,
 } = allApi;
