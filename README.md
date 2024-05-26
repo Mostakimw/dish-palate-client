@@ -46,3 +46,8 @@ Once you have installed the dependencies, you can start the development server b
 ```bash
 npm run dev
 ```
+
+For any questions, feedback, or inquiries, feel free to reach out to me:
+
+- Email: [mostakimahamed401@gmail.com](mailto:mostakimahamed401@gmail.com)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mostakim-ahamed/)

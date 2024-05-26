@@ -23,11 +23,8 @@ interface THamburgerMenuProps {
 }
 
 const Navbar = () => {
-  // const userInfo = getUserInfo();
   const { user, googleLogin, logoutUser } = useContext(AuthContext);
-  // const [user, setUser] = useState<User | null>(null);
   const [createUser] = useCreateUserMutation(undefined);
-  // const [loginUser] = useLoginUserMutation(undefined);
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDrawerOpen = () => {
@@ -38,6 +35,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  // handle login
   const handleLogin = async () => {
     googleLogin().then(async (result) => {
       console.log("login success");
