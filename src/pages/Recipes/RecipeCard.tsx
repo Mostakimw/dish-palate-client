@@ -68,16 +68,18 @@ const RecipeCard = ({ recipe }: { recipe: TRecipe }) => {
 
       if (result.isConfirmed) {
         //! updating user and recipe information here
-        await updateInformation({
+        const res = await updateInformation({
           userEmail: user.email,
           recipeId: recipe._id,
-        });
-        Swal.fire({
-          title: "Purchase Successful",
-          text: "You've successfully purchased the recipe.",
-          icon: "success",
-        });
-        navigate(`/recipe/${recipe._id}`);
+        }).unwrap();
+        if (res?.success) {
+          Swal.fire({
+            title: "Purchase Successful",
+            text: "You've successfully purchased the recipe.",
+            icon: "success",
+          });
+          navigate(`/recipe/${recipe._id}`);
+        }
       }
     } catch (error) {
       console.error("Error handling view recipe:", error);

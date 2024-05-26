@@ -75,10 +75,12 @@ const Navbar = () => {
           <Typography component={NavLink} to="/add-recipe">
             Add Recipe
           </Typography>
-          <Typography component={NavLink} to="/coins">
+          <Typography component={NavLink} to="/purchase-coin">
             Coins
           </Typography>
-          <Avatar alt="Profile Image" src={user?.photoURL || ""} />
+          {"photoURL" in user && user.photoURL && (
+            <Avatar alt="Profile Image" src={user.photoURL} />
+          )}
         </>
       )}
       <Box>

@@ -43,7 +43,16 @@ const allApi = baseApi.injectEndpoints({
     updateAfterBuy: builder.mutation({
       query: (data) => {
         return {
-          url: "/recipe",
+          url: "/recipe-update",
+          method: "PATCH",
+          body: data,
+        };
+      },
+    }),
+    purchaseCoin: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/coin",
           method: "PATCH",
           body: data,
         };
@@ -58,4 +67,5 @@ export const {
   useCreateRecipeMutation,
   useGetAllRecipeQuery,
   useUpdateAfterBuyMutation,
+  usePurchaseCoinMutation,
 } = allApi;
