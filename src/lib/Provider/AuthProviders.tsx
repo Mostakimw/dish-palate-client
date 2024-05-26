@@ -15,8 +15,8 @@ import {
 } from "../../redux/api/allApi";
 
 export type TUser = {
-  displayName: string;
-  photoUrl: string;
+  displayName?: string;
+  photoUrl?: string;
   email: string;
   coin: number;
 };

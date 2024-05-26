@@ -3,7 +3,7 @@ import Container from "../../components/UI/Container/Container";
 import { useGetAllRecipeQuery } from "../../redux/api/allApi";
 import RecipeCard from "./RecipeCard";
 
-type TRecipe = {
+export type TRecipe = {
   _id: string;
   recipeName: string;
   recipeImage: string;

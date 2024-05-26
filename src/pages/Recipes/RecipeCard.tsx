@@ -10,15 +10,16 @@ import { useContext } from "react";
 import { AuthContext, TUser } from "../../lib/Provider/AuthProviders";
 import Swal from "sweetalert2";
 import { useUpdateAfterBuyMutation } from "../../redux/api/allApi";
+import { TRecipe } from "./Recipes";
 
-// const MySwal = withReactContent(Swal);
-
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe }: { recipe: TRecipe }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [updateInformation] = useUpdateAfterBuyMutation(undefined);
 
+  // handle view the recipe
   const handleViewRecipe = async () => {
+    // if user not logged in
     if (!user) {
       Swal.fire({
         title: "Login Required",
@@ -28,6 +29,7 @@ const RecipeCard = ({ recipe }) => {
       return;
     }
 
+    // if user is the creator of that recipe
     try {
       const userData = user as TUser;
 
@@ -36,6 +38,7 @@ const RecipeCard = ({ recipe }) => {
         return;
       }
 
+      // if user have less than 10 coin
       if (userData.coin < 10) {
         Swal.fire({
           title: "Not Enough Coins",
@@ -47,11 +50,13 @@ const RecipeCard = ({ recipe }) => {
         return;
       }
 
-      if (recipe.purchased_by.includes(user.email)) {
+      // if user already purchased
+      if (userData.email && recipe.purchased_by.includes(userData.email)) {
         navigate(`/recipe/${recipe._id}`);
         return;
       }
 
+      // showing the basic modal when click view details btn
       const result = await Swal.fire({
         title: "Confirm Purchase",
         text: "Do you want to spend 10 coins to view this recipe?",
@@ -62,6 +67,7 @@ const RecipeCard = ({ recipe }) => {
       });
 
       if (result.isConfirmed) {
+        //! updating user and recipe information here
         await updateInformation({
           userEmail: user.email,
           recipeId: recipe._id,
@@ -83,7 +89,6 @@ const RecipeCard = ({ recipe }) => {
     }
   };
 
-  console.log(recipe.image);
   return (
     <Card>
       <CardMedia
