@@ -25,7 +25,13 @@ const recipeSchema = z.object({
   country: z.string().min(1, "Country is required"),
   category: z.string().min(1, "Category is required"),
 });
-const categories = ["Breakfast", "Lunch", "Dinner", "Snack"]; // Example categories
+const categories = [
+  "Chicken",
+  "Convenience ",
+  "Asian Fusion",
+  "Desserts",
+  "Vegetarian",
+];
 
 const defaultValues = {
   recipeName: "",
@@ -239,7 +245,7 @@ const AddRecipe = () => {
                 )}
               />
             </Grid>
-            <Grid item xs={12} sx={{textAlign: "center"}}>
+            <Grid item xs={12} sx={{ textAlign: "center" }}>
               <Button
                 type="submit"
                 variant="contained"
